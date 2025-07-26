@@ -136,16 +136,17 @@ AmazonEC2FullAccess, AmazonEKS\_CNI\_Policy, AmazonEKSClusterPolicy, AmazonEKSWo
 Attach the below inline policy also for the same user
 
 {
-  "Version": "2012-10-17",
-  "Statement": \[
-    {
-      "Sid": "VisualEditor0",
-      "Effect": "Allow",
-      "Action": "eks:\*",
-      "Resource": "\*"
-    }
-  ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": "eks:*",
+      "Resource": "*"
+    }
+  ]
 }
+
 
 4.3. Create Access Keys for the user created
 

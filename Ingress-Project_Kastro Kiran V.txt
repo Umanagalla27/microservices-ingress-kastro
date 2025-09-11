@@ -67,8 +67,9 @@ sudo apt install -y fontconfig openjdk-17-jre-headless wget gnupg2
 wget -O- https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | \\
     gpg --dearmor | sudo tee /usr/share/keyrings/jenkins-keyring.gpg > /dev/null
 # Add Jenkins repository
-echo "deb \[signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/" | \\
-    sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 # Update package lists
 sudo apt update -y
 # Install Jenkins
@@ -496,3 +497,4 @@ TO GET ARGO CD PASSWORD:
 ------------------------------------------
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ----> Copy the password and provide in argo cd console ----> You will see the argo cd console ----> Follow as explained in the video
+

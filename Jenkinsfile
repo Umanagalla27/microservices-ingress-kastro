@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_REPO = 'kastrov/techsolutions-app'
+        DOCKER_HUB_REPO = 'Uma Nagalla/techsolutions-app'
         K8S_CLUSTER_NAME = 'kastro-cluster'
         AWS_REGION = 'us-east-1'
         NAMESPACE = 'default'
@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out source code...'
-                git 'https://github.com/KastroVKiran/microservices-ingress.git'
+                git 'https://github.com/Umanagalla27/microservices-ingress.git'
             }
         }
 

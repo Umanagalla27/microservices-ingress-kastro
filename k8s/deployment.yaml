@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: techsolutions
-        image: Uma Nagalla/techsolutions-app:latest
+        image: umanagalla27/techsolutions-app:latest
         ports:
         - containerPort: 80
         resources:
